@@ -1,0 +1,12 @@
+[submodule "InfiniBuilder"]
+	path = InfiniBuilder
+	url = git@github.com:andreicozma1/InfiniBuilder.git
+[submodule "LeafNote"]
+	path = LeafNote
+	url = git@github.com:andreicozma1/LeafNote.git
+[submodule "STEM"]
+	path = STEM
+	url = git@github.com:andreicozma1/STEM.git
+[submodule "Smart-Ledger"]
+	path = Smart-Ledger
+	url = git@github.com:CS401-Team-Project/Smart-Ledger.git
