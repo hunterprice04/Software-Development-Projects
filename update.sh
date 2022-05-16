@@ -5,14 +5,14 @@ if [[ "$1" == "--push" ]]; then
     SHOULD_PUSH=true
 fi
 
-echo '##############################################################################################'
+echo '----------------------------------------------------------------------------------------------'
 echo 'Updating README...'
 echo "# Software Development Projects" > README.md
 echo "This repo contains submodules pointing to my software development projects for various courses at the University Of Tennessee." >> README.md
 echo "">> README.md
 echo "The following are links to the individual projects:" >> README.md
 
-echo '##############################################################################################'
+echo '----------------------------------------------------------------------------------------------'
 echo 'Updating submodules...'
 git pull
 git submodule update --init --recursive
@@ -21,7 +21,7 @@ cat .gitmodules | grep "path" | awk '{print $3}' | while read line
 do
     cd $line
 
-    echo '##############################################################################################'
+    echo '----------------------------------------------------------------------------------------------'
     echo "Pulling newest commits for: $line"
     git pull
 
@@ -31,11 +31,11 @@ do
     echo "- [$line]($url)" >> $path/README.md
     cd $path
 done
-echo '##############################################################################################'
+echo '----------------------------------------------------------------------------------------------'
 
 if [[ $SHOULD_PUSH == true ]]; then
     git add README.md
     git commit -m "Update README.md"
     git push
-    echo '##############################################################################################'
+    echo '----------------------------------------------------------------------------------------------'
 fi
